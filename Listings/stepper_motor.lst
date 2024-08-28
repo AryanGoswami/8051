@@ -1,0 +1,51 @@
+C51 COMPILER V9.56.0.0   STEPPER_MOTOR                                                     10/31/2023 17:50:25 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE STEPPER_MOTOR
+OBJECT MODULE PLACED IN .\Objects\stepper_motor.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE stepper_motor.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\List
+                    -ings\stepper_motor.lst) TABS(2) OBJECT(.\Objects\stepper_motor.obj)
+
+line level    source
+
+   1           #include<reg51.h>
+   2          void MSDelay(unsigned int);
+   3          void main(void)
+   4          {  
+   5   1        unsigned int count=90/(1.8*4);
+   6   1        unsigned int i;
+   7   1        while(1){
+   8   2          for(i=0;i<=count;i++){
+   9   3            P1=0x06;
+  10   3            MSDelay(40);
+  11   3            P1=0x0C;
+  12   3            MSDelay(40);
+  13   3            P1=0x09;
+  14   3            MSDelay(40);
+  15   3            P1=0x03;
+  16   3            MSDelay(40);
+  17   3          }  
+  18   2        }
+  19   1      }
+  20          
+  21          void MSDelay(unsigned int k){
+  22   1        unsigned int s,j;
+  23   1        for(s=0;s<k;s++){
+  24   2           for(j=0;j<1275;j++){
+  25   3           }
+  26   2         }                  
+  27   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     92    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,46 @@
+C51 COMPILER V9.56.0.0   SINE_WAVE                                                         10/31/2023 17:41:56 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE SINE_WAVE
+OBJECT MODULE PLACED IN .\Objects\sine_wave.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE sine_wave.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings
+                    -\sine_wave.lst) TABS(2) OBJECT(.\Objects\sine_wave.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          void msdelay(unsigned int itime);
+   3          //sine_wave[13]={128,192,238.848,256,238.848,192,128,64,17.152,0,64,17.152};
+   4          void main(){
+   5   1      
+   6   1      unsigned char sine_wave[]={0, 16, 32, 64, 110, 128,192,238.848,255,238.848,192,128, 110, 64, 32, 16, 0};
+   7   1      unsigned char x;
+   8   1      while(1){
+   9   2      for(x=0;x<13;x++){
+  10   3      P1=sine_wave[x];
+  11   3      msdelay(250);
+  12   3      }
+  13   2      }
+  14   1      
+  15   1      }
+  16          
+  17          void msdelay(unsigned int itime)
+  18          { int i ,j;
+  19   1      for (i=0;i<itime;i++)
+  20   1      { for (j=0;j<1275;j++);
+  21   2      }
+  22   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     80    ----
+   CONSTANT SIZE    =     17    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      18
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
